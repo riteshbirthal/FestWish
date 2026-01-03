@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply min-h-screen antialiased;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #fafafa 0%, #f5f5f7 50%, #fafafa 100%);
+  }
+
+  /* Apple-style selection */
+  ::selection {
+    background: rgba(147, 51, 234, 0.2);
+  }
+}
+
+@layer components {
+  /* Apple-style Primary Button */
+  .btn-primary {
+    @apply relative overflow-hidden
+           bg-gradient-to-r from-purple-600 to-pink-600 text-white 
+           px-5 py-2.5 sm:px-7 sm:py-3.5 
+           text-sm sm:text-base
+           rounded-xl sm:rounded-2xl font-semibold 
+           active:scale-[0.97]
+           transition-all duration-300 ease-out
+           shadow-[0_4px_14px_rgba(147,51,234,0.4)]
+           hover:shadow-[0_6px_20px_rgba(147,51,234,0.5)]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* Apple-style Secondary Button */
+  .btn-secondary {
+    @apply bg-white/70 backdrop-blur-md text-purple-600 
+           border border-purple-200/50
+           px-5 py-2.5 sm:px-7 sm:py-3.5 
+           text-sm sm:text-base
+           rounded-xl sm:rounded-2xl font-semibold 
+           hover:bg-white/90 hover:border-purple-300/50
+           active:scale-[0.97]
+           transition-all duration-300 ease-out
+           shadow-[0_2px_10px_rgba(0,0,0,0.06)];
+  }
+
+  /* Apple-style Glass Card */
+  .card {
+    @apply bg-white/60 backdrop-blur-xl 
+           rounded-2xl sm:rounded-3xl 
+           p-5 sm:p-7 
+           transition-all duration-500 ease-out
+           border border-white/50
+           shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_0_0_1px_rgba(255,255,255,0.5)];
+  }
+
+  .card:hover {
+    @apply bg-white/70;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.12), 
+                inset 0 0 0 1px rgba(255,255,255,0.6),
+                0 0 0 1px rgba(147,51,234,0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Heavy Glass Card */
+  .card-glass {
+    @apply bg-white/40 backdrop-blur-2xl 
+           rounded-2xl sm:rounded-3xl 
+           p-5 sm:p-7 
+           border border-white/60
+           shadow-[0_8px_32px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)]
+           transition-all duration-500 ease-out;
+  }
+
+  /* Frosted Glass Effect */
+  .frosted {
+    @apply bg-white/30 backdrop-blur-2xl 
+           border border-white/40
+           shadow-[0_8px_32px_rgba(0,0,0,0.1)];
+  }
+
+  /* Apple-style Input Field */
+  .input-field {
+    @apply w-full 
+           px-4 py-3 sm:px-5 sm:py-3.5 
+           text-sm sm:text-base
+           border border-gray-200/80 
+           rounded-xl sm:rounded-2xl 
+           focus:ring-4 focus:ring-purple-500/20 focus:border-purple-400 
+           outline-none 
+           transition-all duration-300 ease-out
+           bg-white/60 backdrop-blur-xl
+           shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)]
+           placeholder:text-gray-400;
+  }
+
+  .input-field:hover {
+    @apply bg-white/80 border-gray-300/80;
+  }
+
+  /* Apple-style Select Field */
+  .select-field {
+    @apply w-full 
+           px-4 py-3 sm:px-5 sm:py-3.5 
+           text-sm sm:text-base
+           border border-gray-200/80 
+           rounded-xl sm:rounded-2xl 
+           focus:ring-4 focus:ring-purple-500/20 focus:border-purple-400 
+           outline-none 
+           bg-white/60 backdrop-blur-xl
+           cursor-pointer
+           appearance-none
+           shadow-[inset_0_1px_2px_rgba(0,0,0,0.06)]
+           bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg%20xmlns%3d%22http%3a%2f%2fwww.w3.org%2f2000%2fsvg%22%20viewBox%3d%220%200%2024%2024%22%20fill%3d%22none%22%20stroke%3d%22%239333ea%22%20stroke-width%3d%222%22%20stroke-linecap%3d%22round%22%20stroke-linejoin%3d%22round%22%3e%3cpolyline%20points%3d%226%209%2012%2015%2018%209%22%3e%3c%2fpolyline%3e%3c%2fsvg%3e')]
+           bg-[length:1.25em_1.25em]
+           bg-[right_0.75rem_center]
+           bg-no-repeat
+           pr-10
+           transition-all duration-300 ease-out;
+  }
+
+  .select-field:hover {
+    @apply bg-white/80 border-gray-300/80;
+  }
+
+  /* Responsive Label */
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1.5 sm:mb-2;
+  }
+
+  /* Festive Gradient */
+  .festive-gradient {
+    @apply bg-gradient-to-r from-festive-gold via-festive-orange to-festive-red;
+  }
+
+  /* Container with responsive padding */
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+
+  /* Responsive Heading */
+  .heading-1 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold;
+  }
+
+  .heading-2 {
+    @apply text-xl sm:text-2xl md:text-3xl font-display font-bold;
+  }
+
+  .heading-3 {
+    @apply text-lg sm:text-xl md:text-2xl font-semibold;
+  }
+
+  /* Animated gradient background */
+  .animated-gradient {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+
+  /* Text gradient animated */
+  .text-gradient-animated {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600;
+    background-size: 200% auto;
+    animation: textGradient 3s linear infinite;
+  }
+
+  /* Hide scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area padding for mobile */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(147, 51, 234, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(147, 51, 234, 0.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Responsive media query adjustments */
+@media (max-width: 640px) {
+  .card {
+    @apply mx-2;
+  }
+}
+
+/* Image loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(200, 200, 200, 0.2) 25%,
+    rgba(200, 200, 200, 0.4) 50%,
+    rgba(200, 200, 200, 0.2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Festival card image hover zoom */
+.festival-card-image {
+  @apply transition-transform duration-500 ease-out;
+}
+
+.festival-card-image:hover {
+  @apply scale-110;
+}
+
+/* Glow effect for buttons */
+.glow-purple {
+  box-shadow: 
+    0 0 20px rgba(147, 51, 234, 0.3),
+    0 0 40px rgba(147, 51, 234, 0.2),
+    0 0 60px rgba(147, 51, 234, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 
+    0 0 20px rgba(236, 72, 153, 0.3),
+    0 0 40px rgba(236, 72, 153, 0.2),
+    0 0 60px rgba(236, 72, 153, 0.1);
+}
+
+/* Glass morphism variants */
+.glass {
+  @apply bg-white/60 backdrop-blur-xl border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-xl border border-white/10;
+}
+
+/* Animated border gradient */
+.border-gradient {
+  position: relative;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #9333ea, #ec4899, #f59e0b) border-box;
+  border: 2px solid transparent;
+}
+
+/* Focus ring enhancement */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-purple-500/20 focus:border-purple-400;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

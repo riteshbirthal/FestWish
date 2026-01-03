@@ -1,0 +1,359 @@
+# ===========================
+# FestWish Project .gitignore
+# ===========================
+
+# ===========================
+# Project-Specific Secrets & Environment
+# ===========================
+# Root level
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+.envrc
+
+# Keep example files
+!.env.example
+
+# Backend environment files
+backend/.env
+backend/.env.local
+backend/.env.development
+backend/.env.production
+backend/.env.*.local
+!backend/.env.example
+
+# Frontend environment files
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+frontend/.env.*.local
+!frontend/.env.example
+
+# Secret directories
+secrets/
+config/secrets/
+backend/secrets/
+frontend/secrets/
+
+# ===========================
+# Backend - Python/FastAPI
+# ===========================
+# Virtual environment
+backend/venv/
+backend/.venv/
+backend/env/
+backend/ENV/
+
+# Python cache (all levels)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/**/__pycache__/
+backend/app/api/__pycache__/
+backend/app/core/__pycache__/
+backend/app/models/__pycache__/
+backend/app/schemas/__pycache__/
+backend/app/services/__pycache__/
+backend/seeds/__pycache__/
+backend/migrations/__pycache__/
+
+# Python build artifacts
+build/
+develop-eggs/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Backend generated files
+backend/generated/
+backend/cards/
+backend/temp_images/
+backend/uploads/
+backend/static/uploads/
+backend/media/
+backend/temp/
+backend/logs/
+backend/*.db
+backend/data/
+
+# ===========================
+# Frontend - React/Vite
+# ===========================
+# Dependencies
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+frontend/build/
+frontend/.cache/
+frontend/out/
+
+# Frontend uploads
+frontend/public/uploads/
+frontend/temp/
+frontend/logs/
+
+# ===========================
+# Python General
+# ===========================
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+.conda/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing & Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+pytest_cache/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ===========================
+# Node.js / JavaScript General
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.parcel-cache/
+.turbo/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Caches
+.npm
+.eslintcache
+.stylelintcache
+
+# Vite
+*.local
+
+# ===========================
+# IDE & Editors
+# ===========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.launch
+.history/
+*.code-workspace
+.vscode-test/
+
+# ===========================
+# Operating System
+# ===========================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================
+# Docker
+# ===========================
+docker-compose.override.yml
+docker-compose.local.yml
+.docker/
+docker-data/
+*.tar
+
+# ===========================
+# Logs & Temporary Files
+# ===========================
+logs/
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+temp/
+tmp/
+
+# ===========================
+# Database
+# ===========================
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+dump.sql
+*.dump
+*.rdb
+
+# ===========================
+# Uploads & Media (user generated)
+# ===========================
+uploads/
+media/
+static/uploads/
+public/uploads/
+
+# ===========================
+# Coverage & Testing
+# ===========================
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+test-report/
+backend/htmlcov/
+frontend/coverage/
+
+# ===========================
+# Certificates & Keys
+# ===========================
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+certs/
+ssl/
+backend/certs/
+frontend/certs/
+
+# ===========================
+# Supabase
+# ===========================
+supabase/.branches
+supabase/.temp
+.supabase/
+
+# ===========================
+# Cloud & Deployment
+# ===========================
+.netlify/
+.vercel/
+.serverless/
+.aws-sam/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# ===========================
+# Miscellaneous
+# ===========================
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Debug files
+*.dmp
+*.stackdump
+
+# Backup files
+*.orig
+*.rej
+
+# Lock files (uncomment if not needed in version control)
+# package-lock.json
+# yarn.lock
+# Pipfile.lock
+
+# Documentation build output
+docs/_build/
+site/
