@@ -182,7 +182,8 @@ const festivalImages = {
 function FestivalCard({ festival }) {
   const emoji = festivalEmojis[festival.slug] || '🎉'
   const gradient = festivalGradients[festival.slug] || 'from-purple-400 to-pink-500'
-  const image = festivalImages[festival.slug]
+  // Use API image if available, fallback to hardcoded images
+  const image = festival.image?.image_url || festivalImages[festival.slug]
 
   return (
     <Link to={`/festivals/${festival.slug}`}>

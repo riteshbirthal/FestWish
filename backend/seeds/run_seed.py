@@ -27,6 +27,8 @@ from supabase import create_client
 from seeds.seed_festivals import FESTIVALS
 from seeds.seed_quotes import FESTIVAL_QUOTES
 from seeds.seed_messages import RELATIONSHIP_MESSAGE_TEMPLATES, FESTIVAL_GREETINGS
+from seeds.seed_images import seed_festival_images
+from pathlib import Path
 
 
 def get_client():
@@ -253,6 +255,17 @@ def main():
     seed_messages(client)
     generate_additional_messages(client)
     
+    # Seed images if available
+    project_root = Path(__file__).parent.parent.parent
+    images_dir = project_root / "temp" / "festival_images"
+    
+    if images_dir.exists():
+        print("\n[4/4] Festival images directory found, seeding images...")
+        seed_festival_images(client, images_dir)
+    else:
+        print("\n[4/4] No festival images directory found, skipping image seeding.")
+        print(f"      Expected location: {images_dir}")
+    
     print("\n" + "=" * 50)
     print("Seeding complete!")
     print("=" * 50)
@@ -261,11 +274,13 @@ def main():
     festivals_count = client.table("festivals").select("id", count="exact").execute()
     quotes_count = client.table("festival_quotes").select("id", count="exact").execute()
     messages_count = client.table("wish_messages").select("id", count="exact").execute()
+    images_count = client.table("festival_images").select("id", count="exact").execute()
     
     print(f"\nDatabase Summary:")
     print(f"  - Festivals: {festivals_count.count}")
     print(f"  - Quotes: {quotes_count.count}")
     print(f"  - Wish Messages: {messages_count.count}")
+    print(f"  - Festival Images: {images_count.count}")
 
 
 if __name__ == "__main__":

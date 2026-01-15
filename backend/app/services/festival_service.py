@@ -13,14 +13,27 @@ class FestivalService:
         self.table = "festivals"
     
     async def get_all(self, active_only: bool = True) -> List[dict]:
-        """Get all festivals"""
+        """Get all festivals with their first image"""
         query = self.client.table(self.table).select("*").order("name")
         
         if active_only:
             query = query.eq("is_active", True)
         
         result = query.execute()
-        return result.data
+        festivals = result.data
+        
+        # Fetch first image for each festival
+        for festival in festivals:
+            image_result = self.client.table("festival_images")\
+                .select("*")\
+                .eq("festival_id", festival["id"])\
+                .eq("is_active", True)\
+                .limit(1)\
+                .execute()
+            
+            festival["image"] = image_result.data[0] if image_result.data else None
+        
+        return festivals
     
     async def get_by_id(self, festival_id: UUID) -> dict:
         """Get festival by ID with full details"""

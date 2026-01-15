@@ -38,6 +38,7 @@ class Festival(FestivalBase):
     seo_title: Optional[str] = None
     seo_description: Optional[str] = None
     created_at: datetime
+    image: Optional[FestivalImage] = None  # First/primary image for list views
     
     class Config:
         from_attributes = True
