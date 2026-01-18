@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FiCalendar, FiGlobe, FiSend, FiArrowLeft, FiBookOpen, FiHeart, FiStar } from 'react-icons/fi'
 import { useFestivalBySlug } from '../hooks/useFestivals'
+import { getAllQuotes } from '../data/quotes'
 import LoadingSpinner from '../components/LoadingSpinner'
 
 const festivalEmojis = {
@@ -37,6 +38,9 @@ const festivalGradients = {
 function FestivalDetail() {
   const { slug } = useParams()
   const { data: festival, isLoading, error } = useFestivalBySlug(slug)
+  
+  // Get quotes from local data
+  const quotes = festival ? getAllQuotes(festival.slug) : []
 
   const emoji = festivalEmojis[slug] || '🎉'
   const gradient = festivalGradients[slug] || 'from-purple-600 to-pink-600'
@@ -204,7 +208,7 @@ function FestivalDetail() {
           ))}
 
           {/* Quotes Section */}
-          {festival.quotes?.length > 0 && (
+          {quotes.length > 0 && (
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -220,16 +224,16 @@ function FestivalDetail() {
                 </h2>
               </div>
               <div className="grid gap-3 sm:gap-4">
-                {festival.quotes.slice(0, 5).map((quote, i) => (
+                {quotes.slice(0, 5).map((quote, i) => (
                   <motion.blockquote
-                    key={quote.id}
+                    key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     className={`border-l-4 border-purple-500 pl-3 sm:pl-4 py-2 bg-purple-50/50 rounded-r-lg`}
                   >
-                    <p className="text-gray-700 italic text-sm sm:text-base">"{quote.quote_text}"</p>
+                    <p className="text-gray-700 italic text-sm sm:text-base">"{quote.text}"</p>
                     {quote.author && (
                       <footer className="text-xs sm:text-sm text-gray-500 mt-1 sm:mt-2">
                         - {quote.author}

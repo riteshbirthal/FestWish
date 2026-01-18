@@ -1,0 +1,292 @@
+[
+  {
+    "id": "cfa624f7-f873-4ba0-8c93-bea2a578e5e1",
+    "name": "father",
+    "display_name": "Father",
+    "category": "family",
+    "sort_order": 1,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "c9099e88-dff6-4c90-9cd2-6aa270304129",
+    "name": "mother",
+    "display_name": "Mother",
+    "category": "family",
+    "sort_order": 2,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "1f32b2c6-a559-429c-8f56-3a12028b656a",
+    "name": "brother",
+    "display_name": "Brother",
+    "category": "family",
+    "sort_order": 3,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "0373c176-fe84-4512-bc9f-b405d710111a",
+    "name": "sister",
+    "display_name": "Sister",
+    "category": "family",
+    "sort_order": 4,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "11b6576c-a007-462e-8595-4c98860519d9",
+    "name": "son",
+    "display_name": "Son",
+    "category": "family",
+    "sort_order": 5,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "bf7230a2-c729-42a4-be96-e616fa1e89b4",
+    "name": "daughter",
+    "display_name": "Daughter",
+    "category": "family",
+    "sort_order": 6,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "3407adae-49b9-46df-b12f-55a721403642",
+    "name": "relative",
+    "display_name": "Relative",
+    "category": "family",
+    "sort_order": 23,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "9e7f1d64-4114-41de-bede-649315254053",
+    "name": "grandparent",
+    "display_name": "Grandparent",
+    "category": "family",
+    "sort_order": 24,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "6314ac9d-baad-47bc-9885-79a2e205a94b",
+    "name": "grandchild",
+    "display_name": "Grandchild",
+    "category": "family",
+    "sort_order": 25,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "c0f1073f-87f4-41d5-9d02-e342fb0a6e98",
+    "name": "uncle",
+    "display_name": "Uncle",
+    "category": "family",
+    "sort_order": 26,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "7d21ae11-544e-45e6-b7a3-6657618f957d",
+    "name": "aunt",
+    "display_name": "Aunt",
+    "category": "family",
+    "sort_order": 27,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "38820ca3-573e-4161-bba6-4f380f4e565a",
+    "name": "cousin",
+    "display_name": "Cousin",
+    "category": "family",
+    "sort_order": 28,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "d1c646ea-28a4-4d16-bc19-df682c457d34",
+    "name": "in_law",
+    "display_name": "In-Law",
+    "category": "family",
+    "sort_order": 29,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "e3b15b98-30e4-4342-8f4e-2116b479f746",
+    "name": "best_friend",
+    "display_name": "Best Friend",
+    "category": "friends",
+    "sort_order": 13,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "91d1a153-1a94-453e-a85f-9329fb8913f9",
+    "name": "friend",
+    "display_name": "Friend",
+    "category": "friends",
+    "sort_order": 12,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "2fe9ec49-8a3b-4398-ae31-5f7a3833dfe7",
+    "name": "neighbor",
+    "display_name": "Neighbor",
+    "category": "other",
+    "sort_order": 21,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "349d5676-a2ee-4269-a0f3-93158e246479",
+    "name": "teacher",
+    "display_name": "Teacher",
+    "category": "professional",
+    "sort_order": 17,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "82ab7cd8-a9c7-4a66-9a27-ac7c81b31f0d",
+    "name": "student",
+    "display_name": "Student",
+    "category": "professional",
+    "sort_order": 18,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "c33a49f3-d1e8-4d61-90a3-b201fbb234c6",
+    "name": "client",
+    "display_name": "Client",
+    "category": "professional",
+    "sort_order": 19,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "95edb6f9-dff2-4b32-985a-8464e6d80db0",
+    "name": "customer",
+    "display_name": "Customer",
+    "category": "professional",
+    "sort_order": 20,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "caf90d67-6fa3-42f6-837b-c08fb8216c1a",
+    "name": "colleague",
+    "display_name": "Colleague",
+    "category": "professional",
+    "sort_order": 14,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "8679c58a-28ec-4be1-93ee-7e57f2eaa54d",
+    "name": "mentor",
+    "display_name": "Mentor",
+    "category": "professional",
+    "sort_order": 22,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "348ce763-e989-4244-a8dd-981e028690b0",
+    "name": "manager",
+    "display_name": "Manager",
+    "category": "professional",
+    "sort_order": 15,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "a41aee75-8f6c-4ee5-ac90-2e402434980c",
+    "name": "team_member",
+    "display_name": "Team Member",
+    "category": "professional",
+    "sort_order": 16,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "150d4937-33cc-428c-8acd-2412ce17bcee",
+    "name": "partner",
+    "display_name": "Partner",
+    "category": "romantic",
+    "sort_order": 9,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "22495905-f23f-4dcd-a8b0-8845efd4d458",
+    "name": "girlfriend",
+    "display_name": "Girlfriend",
+    "category": "romantic",
+    "sort_order": 10,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "fdd49141-080c-4e6d-93d0-43f0589a1bbc",
+    "name": "boyfriend",
+    "display_name": "Boyfriend",
+    "category": "romantic",
+    "sort_order": 11,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "c72cdb37-a498-4d36-9fc7-af351d508d92",
+    "name": "wife",
+    "display_name": "Wife",
+    "category": "romantic",
+    "sort_order": 8,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  },
+  {
+    "id": "57d280c4-9551-4661-9956-f54f4a482647",
+    "name": "husband",
+    "display_name": "Husband",
+    "category": "romantic",
+    "sort_order": 7,
+    "is_active": true,
+    "created_at": "2026-01-02T22:14:24.035412+00:00",
+    "updated_at": "2026-01-02T22:14:24.035412+00:00"
+  }
+]

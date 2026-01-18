@@ -1,16 +1,43 @@
-import { useQuery } from '@tanstack/react-query'
-import { relationshipApi } from '../services/api'
+import { useMemo } from 'react'
+import { 
+  RELATIONSHIPS, 
+  getRelationshipsByCategory,
+  getAllCategories 
+} from '../data/relationships'
 
+/**
+ * Get all relationships (instant, no API call)
+ * Optionally filter by category
+ */
 export function useRelationships(category) {
-  return useQuery({
-    queryKey: ['relationships', category],
-    queryFn: () => relationshipApi.getAll(category).then((res) => res.data),
-  })
+  const data = useMemo(() => {
+    const relationships = getRelationshipsByCategory(category)
+    return {
+      relationships,
+      total: relationships.length
+    }
+  }, [category])
+
+  return {
+    data,
+    isLoading: false,
+    error: null
+  }
 }
 
+/**
+ * Get all relationship categories
+ */
 export function useRelationshipCategories() {
-  return useQuery({
-    queryKey: ['relationship-categories'],
-    queryFn: () => relationshipApi.getCategories().then((res) => res.data),
-  })
+  const data = useMemo(() => {
+    return {
+      categories: getAllCategories()
+    }
+  }, [])
+
+  return {
+    data,
+    isLoading: false,
+    error: null
+  }
 }
