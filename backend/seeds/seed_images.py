@@ -43,6 +43,7 @@ IMAGE_TO_FESTIVAL_MAPPING = {
     "Good-Friday": "good-friday",
     "Guru_Nanak_Jayanti": None,  # No Guru Nanak Jayanti in festivals list
     "Guru_Purnima": "guru-purnima",
+    "Halloween": "halloween",
     "Hanukkah": "hanukkah",
     "Happy_New_Year": "new-year",
     "Happy_New_Year_": "new-year",  # Duplicate, will skip
