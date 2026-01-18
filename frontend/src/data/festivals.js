@@ -4,7 +4,14 @@
  */
 import festivalsData from './festivals.json'
 
-export const FESTIVALS = festivalsData
+// Transform festivals to match expected structure with nested image object
+export const FESTIVALS = festivalsData.map(festival => ({
+  ...festival,
+  image: festival.image_url ? {
+    image_url: festival.image_url,
+    alt_text: festival.name
+  } : null
+}))
 
 /**
  * Get festival by ID
