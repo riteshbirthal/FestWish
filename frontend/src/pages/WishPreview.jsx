@@ -34,10 +34,15 @@ function WishPreview() {
     }
 
     try {
-      const response = await wishApi.download(wishId)
-      const downloadUrl = response.data.download_url
-      window.open(downloadUrl, '_blank')
-      toast.success('Opening download...')
+      // Trigger download by opening the download endpoint
+      const downloadUrl = `${import.meta.env.VITE_API_URL}/wishes/${wishId}/download`
+      const link = document.createElement('a')
+      link.href = downloadUrl
+      link.download = `festwish_${wishId}.jpg`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      toast.success('Downloading card...')
     } catch (error) {
       toast.error('Failed to download card')
     }

@@ -123,17 +123,27 @@ async def generate_card(
 @router.get("/{wish_id}/download")
 async def download_card(wish_id: UUID):
     """Download generated card as image file"""
+    import httpx
+    
     wish_service = WishService()
     wish = await wish_service.get_wish(wish_id)
     
     if not wish.get("generated_card_url"):
         return {"error": "No card generated for this wish"}
     
-    # Return redirect to card URL or proxy the download
-    return {
-        "download_url": wish["generated_card_url"],
-        "filename": f"festwish_{wish_id}.jpg"
-    }
+    # Fetch the image from storage
+    async with httpx.AsyncClient() as client:
+        response = await client.get(wish["generated_card_url"])
+        image_bytes = response.content
+    
+    # Return the image with download headers
+    return Response(
+        content=image_bytes,
+        media_type="image/jpeg",
+        headers={
+            "Content-Disposition": f'attachment; filename="festwish_{wish_id}.jpg"'
+        }
+    )
 
 
 @router.get("/history")

@@ -158,13 +158,25 @@ class CardService:
         try:
             storage_path = f"generated_cards/{wish_id}.jpg"
             
+            # Delete existing card if it exists
+            try:
+                self.client.storage.from_(self.bucket).remove([storage_path])
+            except:
+                pass  # Ignore if file doesn't exist
+            
+            # Upload new card
             self.client.storage.from_(self.bucket).upload(
                 storage_path,
                 card_bytes,
                 {"content-type": "image/jpeg"}
             )
             
-            card_url = self.client.storage.from_(self.bucket).get_public_url(storage_path)
+            # Generate signed URL (valid for 1 year)
+            signed_result = self.client.storage.from_(self.bucket).create_signed_url(
+                storage_path,
+                86400 * 365  # 1 year in seconds
+            )
+            card_url = signed_result['signedURL']
             
             return card_url
             
